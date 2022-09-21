@@ -1,0 +1,58 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="Dimitar" id="1663762126561-1">
+        <createTable tableName="APPLICATIONINFO">
+            <column autoIncrement="true" name="ID" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_APPLICATIONINFO"/>
+            </column>
+            <column name="APPLICATIONNAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="APPLICATIONVERSION" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Dimitar" id="1663762126561-2">
+        <createTable tableName="DATABASECHANGELOG">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AUTHOR" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FILENAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATEEXECUTED" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ORDEREXECUTED" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXECTYPE" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="MD5SUM" type="VARCHAR(35)"/>
+            <column name="DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="COMMENTS" type="VARCHAR(255)"/>
+            <column name="TAG" type="VARCHAR(255)"/>
+            <column name="LIQUIBASE" type="VARCHAR(20)"/>
+            <column name="CONTEXTS" type="VARCHAR(255)"/>
+            <column name="LABELS" type="VARCHAR(255)"/>
+            <column name="DEPLOYMENT_ID" type="VARCHAR(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Dimitar" id="1663762126561-3">
+        <createTable tableName="DATABASECHANGELOGLOCK">
+            <column name="ID" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_DATABASECHANGELOGLOCK"/>
+            </column>
+            <column name="LOCKED" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LOCKGRANTED" type="TIMESTAMP"/>
+            <column name="LOCKEDBY" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
