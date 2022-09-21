@@ -95,7 +95,11 @@
 					<password>password</password>
 					<changelogSchemaName>liquibaseDB</changelogSchemaName>
 					<outputChangeLogFile>h2changelog.xml</outputChangeLogFile>
+					<changeLogFile>h2changelog.xml</changeLogFile>
 					<changeSetAuthor>Dimitar</changeSetAuthor>
+					<includeSchema>true</includeSchema>
+					<diffTypes>data</diffTypes>
+
 <!--					<propertyFileWillOverride>true</propertyFileWillOverride>-->
 <!--					<propertyFile>target/classes/liquibase.properties</propertyFile>-->
 				</configuration>

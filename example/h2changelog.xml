@@ -1,58 +1,73 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-    <changeSet author="Dimitar" id="1663762126561-1">
-        <createTable tableName="APPLICATIONINFO">
-            <column autoIncrement="true" name="ID" type="INT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_APPLICATIONINFO"/>
-            </column>
-            <column name="APPLICATIONNAME" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="APPLICATIONVERSION" type="VARCHAR(50)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
+    <changeSet author="Dimitar" id="1663765923314-1">
+        <insert schemaName="PUBLIC" tableName="APPLICATIONINFO">
+            <column name="ID" valueNumeric="1"/>
+            <column name="APPLICATIONNAME" value="LiquibaseWithSpringBoot"/>
+            <column name="APPLICATIONVERSION" value="2.0"/>
+        </insert>
+        <insert schemaName="PUBLIC" tableName="APPLICATIONINFO">
+            <column name="ID" valueNumeric="2"/>
+            <column name="APPLICATIONNAME" value="MATE"/>
+            <column name="APPLICATIONVERSION" value="2.3"/>
+        </insert>
     </changeSet>
-    <changeSet author="Dimitar" id="1663762126561-2">
-        <createTable tableName="DATABASECHANGELOG">
-            <column name="ID" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="AUTHOR" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="FILENAME" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="DATEEXECUTED" type="TIMESTAMP">
-                <constraints nullable="false"/>
-            </column>
-            <column name="ORDEREXECUTED" type="INT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="EXECTYPE" type="VARCHAR(10)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="MD5SUM" type="VARCHAR(35)"/>
-            <column name="DESCRIPTION" type="VARCHAR(255)"/>
-            <column name="COMMENTS" type="VARCHAR(255)"/>
-            <column name="TAG" type="VARCHAR(255)"/>
-            <column name="LIQUIBASE" type="VARCHAR(20)"/>
-            <column name="CONTEXTS" type="VARCHAR(255)"/>
-            <column name="LABELS" type="VARCHAR(255)"/>
-            <column name="DEPLOYMENT_ID" type="VARCHAR(10)"/>
-        </createTable>
+    <changeSet author="Dimitar" id="1663765923314-2">
+        <insert schemaName="PUBLIC" tableName="DATABASECHANGELOG">
+            <column name="ID" value="1"/>
+            <column name="AUTHOR" value="admin"/>
+            <column name="FILENAME" value="dblogs/changelog/changes/create-info-table-changelog.xml"/>
+            <column name="DATEEXECUTED" valueDate="2022-09-21T14:06:50.791009"/>
+            <column name="ORDEREXECUTED" valueNumeric="1"/>
+            <column name="EXECTYPE" value="EXECUTED"/>
+            <column name="MD5SUM" value="8:cac48da15fdc09fcb591e64bd396aec1"/>
+            <column name="DESCRIPTION" value="createTable tableName=applicationinfo"/>
+            <column name="COMMENTS" value=""/>
+            <column name="TAG"/>
+            <column name="LIQUIBASE" value="4.9.1"/>
+            <column name="CONTEXTS"/>
+            <column name="LABELS"/>
+            <column name="DEPLOYMENT_ID" value="3762010738"/>
+        </insert>
+        <insert schemaName="PUBLIC" tableName="DATABASECHANGELOG">
+            <column name="ID" value="2"/>
+            <column name="AUTHOR" value="admin"/>
+            <column name="FILENAME" value="dblogs/changelog/changes/insert-info-table-changelog.xml"/>
+            <column name="DATEEXECUTED" valueDate="2022-09-21T14:06:50.794341"/>
+            <column name="ORDEREXECUTED" valueNumeric="2"/>
+            <column name="EXECTYPE" value="EXECUTED"/>
+            <column name="MD5SUM" value="8:a77d18372800f48352b1422eb37fea22"/>
+            <column name="DESCRIPTION" value="insert tableName=applicationinfo"/>
+            <column name="COMMENTS" value=""/>
+            <column name="TAG"/>
+            <column name="LIQUIBASE" value="4.9.1"/>
+            <column name="CONTEXTS"/>
+            <column name="LABELS"/>
+            <column name="DEPLOYMENT_ID" value="3762010738"/>
+        </insert>
+        <insert schemaName="PUBLIC" tableName="DATABASECHANGELOG">
+            <column name="ID" value="3"/>
+            <column name="AUTHOR" value="admin"/>
+            <column name="FILENAME" value="dblogs/changelog/changes/update-info-table-changelog.xml"/>
+            <column name="DATEEXECUTED" valueDate="2022-09-21T14:06:50.799123"/>
+            <column name="ORDEREXECUTED" valueNumeric="3"/>
+            <column name="EXECTYPE" value="EXECUTED"/>
+            <column name="MD5SUM" value="8:bfbe6226314d0f6530a83a119c595019"/>
+            <column name="DESCRIPTION" value="update tableName=applicationinfo"/>
+            <column name="COMMENTS" value=""/>
+            <column name="TAG"/>
+            <column name="LIQUIBASE" value="4.9.1"/>
+            <column name="CONTEXTS"/>
+            <column name="LABELS"/>
+            <column name="DEPLOYMENT_ID" value="3762010738"/>
+        </insert>
     </changeSet>
-    <changeSet author="Dimitar" id="1663762126561-3">
-        <createTable tableName="DATABASECHANGELOGLOCK">
-            <column name="ID" type="INT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_DATABASECHANGELOGLOCK"/>
-            </column>
-            <column name="LOCKED" type="BOOLEAN">
-                <constraints nullable="false"/>
-            </column>
-            <column name="LOCKGRANTED" type="TIMESTAMP"/>
-            <column name="LOCKEDBY" type="VARCHAR(255)"/>
-        </createTable>
+    <changeSet author="Dimitar" id="1663765923314-3">
+        <insert schemaName="PUBLIC" tableName="DATABASECHANGELOGLOCK">
+            <column name="ID" valueNumeric="1"/>
+            <column name="LOCKED" valueBoolean="false"/>
+            <column name="LOCKGRANTED"/>
+            <column name="LOCKEDBY"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>
