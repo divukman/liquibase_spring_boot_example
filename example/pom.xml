@@ -98,7 +98,9 @@
 					<changeLogFile>h2changelog.xml</changeLogFile>
 					<changeSetAuthor>Dimitar</changeSetAuthor>
 					<includeSchema>true</includeSchema>
-					<diffTypes>data</diffTypes>
+
+
+<!--					<diffTypes>data</diffTypes>  USE FOR DATA CHANGESET -->
 
 <!--					<propertyFileWillOverride>true</propertyFileWillOverride>-->
 <!--					<propertyFile>target/classes/liquibase.properties</propertyFile>-->
