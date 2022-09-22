@@ -1,0 +1,45 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="Dimitar" id="1663843221275-1">
+        <createTable schemaName="public" tableName="databasechangeloglock">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="databasechangeloglock_pkey"/>
+            </column>
+            <column name="locked" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lockgranted" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="lockedby" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Dimitar" id="1663843221275-2">
+        <createTable schemaName="public" tableName="orderentity">
+            <column name="orderid" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="orderentity_pkey"/>
+            </column>
+            <column name="orderstatus" type="VARCHAR(255)"/>
+            <column name="productid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Dimitar" id="1663843602594-1">
+        <createTable schemaName="public" tableName="databasechangeloglock">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="databasechangeloglock_pkey"/>
+            </column>
+            <column name="locked" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lockgranted" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="lockedby" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Dimitar" id="1663843602594-2">
+        <createTable schemaName="public" tableName="orderentity">
+            <column name="orderid" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="orderentity_pkey"/>
+            </column>
+            <column name="orderstatus" type="VARCHAR(255)"/>
+            <column name="productid" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
